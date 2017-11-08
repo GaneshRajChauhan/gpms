@@ -11,8 +11,8 @@ import { IUser } from './user';
 
 @Injectable()
 export class AuthService {
-     domain = "http://localhost:1978/"; // Development Domain - Not Needed in Production
-    //  domain="";
+    //  domain = "http://localhost:1978/"; // Development Domain - Not Needed in Production
+     domain="";
     authToken;
     user; 
     options;
