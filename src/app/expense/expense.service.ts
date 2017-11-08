@@ -11,7 +11,8 @@ import 'rxjs/add/observable/throw';
 export class ExpenseService {
     
     public jwtToken: string;
-    domain = "http://localhost:1978/"; 
+    // domain = "http://localhost:1978/"; 
+    domain="";
     constructor(private http: Http) {
         const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
