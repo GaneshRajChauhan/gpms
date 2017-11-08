@@ -9,7 +9,7 @@ export class BlogService {
   domain = this.authService.domain;
   public jwtToken: string;
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private http: Http
   ) {
 

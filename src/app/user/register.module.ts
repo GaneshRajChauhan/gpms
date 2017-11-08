@@ -17,7 +17,7 @@ import {UserService} from './user.service'
     ChartsModule,
     BsDropdownModule
   ],
-  declarations: [ RegisterComponent ],
+  declarations: [  ],
   providers:[UserService]
 })
 export class RegisterModule { }

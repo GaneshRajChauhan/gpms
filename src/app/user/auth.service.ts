@@ -11,7 +11,8 @@ import { IUser } from './user';
 
 @Injectable()
 export class AuthService {
-    domain = "http://localhost:1978/"; // Development Domain - Not Needed in Production
+     domain = "http://localhost:1978/"; // Development Domain - Not Needed in Production
+    //  domain="";
     authToken;
     user; 
     options;
@@ -49,7 +50,7 @@ export class AuthService {
         let headers = new Headers({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
 
-        return this.http.post('http://localhost:1978/api/login', JSON.stringify(oUser), options)
+        return this.http.post(this.domain+'api/login', JSON.stringify(oUser), options)
         .do((response: Response) => {
             if (response.json().success) {
                 this.currentUser = <IUser>response.json().message;

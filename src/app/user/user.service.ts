@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 export class UserService {
     
     public jwtToken: string;
-    domain="";
+    domain = "http://localhost:1978/"; 
 
     constructor(private http: Http) {
         const theUser:any = JSON.parse(localStorage.getItem('currentUser'));

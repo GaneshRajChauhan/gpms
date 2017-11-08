@@ -11,7 +11,7 @@ import 'rxjs/add/observable/throw';
 export class ExpenseService {
     
     public jwtToken: string;
-   domain="";
+    domain = "http://localhost:1978/"; 
     constructor(private http: Http) {
         const theUser:any = JSON.parse(localStorage.getItem('currentUser'));
         if (theUser) {
@@ -24,7 +24,6 @@ export class ExpenseService {
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', `${this.jwtToken}`);
         let options = new RequestOptions({ headers: headers });
-
         return this.http.post(this.domain+`api/expense/${userid}`, JSON.stringify(oExpense), options)
             .map((response: Response) => response.json())
             .catch(this.handleError);
